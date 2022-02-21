@@ -1,0 +1,42 @@
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
+
+// Write your code below:
+
+function generateTarget(){
+    return Math.floor(Math.random()*10);
+  }
+  //console.log(generateTarget());
+
+  function compareGuesses(human,computer,target) {
+
+    if (human>9 || human<0)
+       alert('Enter a number between 0 and 9');
+
+    if ((Math.abs( human - target)) < (Math.abs(computer - target))) {
+        return true;
+      }
+    else if ((Math.abs( human - target)) === (Math.abs(computer - target))) {
+        return true;
+      }
+     else {
+        return false;
+      }
+}
+//console.log(compareGuesses(9 , 7 , 8));
+
+function updateScore(compareGuesses) {
+    if (compareGuesses === true) {
+        return humanScore+=1;
+    } else { 
+        return computerScore+=1;
+    }
+
+}
+
+//console.log(updateScore(compareGuesses(9, 7, 9)));
+
+function advanceRound(compareGuesses) {
+     currentRoundNumber+=1;
+    }
